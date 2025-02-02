@@ -20,3 +20,18 @@ def pregunta_13():
     E    275
     Name: c5b, dtype: int64
     """
+    import pandas as pd
+
+    data1 = pd.read_csv('./files/input/tbl0.tsv', sep='\t')
+    data2 = pd.read_csv('./files/input/tbl2.tsv', sep='\t')
+
+    #  join en la clave `c0`
+    merged = pd.merge(data1, data2, on='c0')
+
+    # agrupar `c1` y sumar  `c5b`
+    resultado = merged.groupby('c1')['c5b'].sum()
+
+    return resultado
+
+print(pregunta_13())
+

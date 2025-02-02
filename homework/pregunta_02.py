@@ -14,3 +14,10 @@ def pregunta_02():
     4
 
     """
+    import pandas as pd
+    contenido = pd.read_csv('./files/input/tbl0.tsv', delimiter='\t')
+    cantidad_columnas = len(contenido.columns)
+
+    return cantidad_columnas
+
+print(pregunta_02())

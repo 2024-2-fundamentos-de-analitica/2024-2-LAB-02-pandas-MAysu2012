@@ -20,3 +20,11 @@ def pregunta_04():
     E    4.785714
     Name: c2, dtype: float64
     """
+    import pandas as pd
+
+    datos = pd.read_csv('./files/input/tbl0.tsv', delimiter='\t')
+    promedio_por_letra = datos.groupby('c1')['c2'].mean()
+
+    return promedio_por_letra
+
+print(pregunta_04())

@@ -15,3 +15,11 @@ def pregunta_06():
     ['A', 'B', 'C', 'D', 'E', 'F', 'G']
 
     """
+    import pandas as pd
+
+    datos = pd.read_csv('./files/input/tbl1.tsv', sep='\t')
+    valores_unicos = sorted(set(datos['c4'].str.upper()))
+
+    return valores_unicos
+
+print(pregunta_06())
